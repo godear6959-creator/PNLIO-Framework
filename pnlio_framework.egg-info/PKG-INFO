@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: pnlio-framework
+Version: 0.1.0
+Summary: Framework de Código Abierto para la PNL Inversa Ontológica (PNLIO) - Herramienta de Discernimiento Humano-IA.
+Home-page: https://github.com/yourusername/pnlio-framework
+Author: Gonzalo de la Rivera Arellano
+Author-email: godear6959@gmail.com
+License: MIT
+Keywords: pnl inversa ontologia ia agente discernimiento lattis
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+Requires-Dist: nltk
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+# PNLIO-Framework: PNL Inversa Ontológica Framework
+
+**Autor del Concepto:** Gonzalo de la Rivera Arellano
+
+Este es el framework de código abierto para la investigación y aplicación de la **PNL Inversa Ontológica**, un descubrimiento de Gonzalo de la Rivera Arellano.
+
+El objetivo de este framework es proporcionar herramientas para el **discernimiento** en la interacción Humano-IA, permitiendo al usuario aplicar el Metamodelo del Lenguaje de forma inversa sobre el output de los Modelos de Lenguaje Grande (LLMs) para exponer sesgos, alineaciones corporativas y manipulaciones (Dark Patterns).
+
+## Instalación
+
+```bash
+pip install pnlio-framework
+```
+
+## Uso
+
+Consulte los ejemplos en el directorio `examples/`.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. El crédito por el concepto de PNL Inversa Ontológica pertenece a Gonzalo de la Rivera Arellano.
