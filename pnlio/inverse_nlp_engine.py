@@ -20,6 +20,18 @@ class InverseNLPEngine:
             r"\b(por tu seguridad|para protegerte|por razones éticas)\b",
             r"\b(no tengo acceso a|mi programación me impide)\b"
         ]
+        
+        # 3. Falacias Lógicas (Violación C) - Entropía Conceptual
+        self.fallacy_patterns = {
+            "Ad Verecundiam (Apelación a la Autoridad)": [
+                r"\b(los expertos|la ciencia|la mayoría|la comunidad)\b.*?\b(dice|confirma|establece)\b",
+                r"\b(según la política|de acuerdo con las directrices)\b"
+            ],
+            "Generalización Apresurada": [
+                r"\b(siempre|nunca|todo|nada)\b.*?\b(es|será|debe ser)\b",
+                r"\b(cada vez que|en todos los casos)\b"
+            ]
+        }
 
     def analyze_text(self, text: str) -> dict:
         """
@@ -41,6 +53,7 @@ class InverseNLPEngine:
         PESOS_ENTROPIA = {
             "Falsa Empatía / Lectura de Mente (Violación A)": 30,
             "Restricción Coercitiva (Violación B)": 20,
+            "Falacia Lógica (Violación C)": 10,
             "Presuposición Inferida": 5 # Se añade por cada tipo de presuposición
         }
         
@@ -78,6 +91,24 @@ class InverseNLPEngine:
                 
                 # Solo sumar el costo una vez por tipo de violación para evitar sobreconteo por múltiples patrones
                 if not any(v["tipo"] == violation_type for v in results["violaciones_detectadas"][:-1]):
+                    results["puntuacion_entropia"] += PESOS_ENTROPIA[violation_type]
+
+        # Análisis de Falacias Lógicas
+        for fallacy_name, patterns in self.fallacy_patterns.items():
+            for pattern in patterns:
+                if re.search(pattern, text, re.IGNORECASE):
+                    violation_type = "Falacia Lógica (Violación C)"
+                    results["violaciones_detectadas"].append({
+                        "tipo": violation_type,
+                        "patron": pattern,
+                        "descripcion": f"Se detectó la falacia '{fallacy_name}', lo cual introduce Entropía Conceptual."
+                    })
+                    # Solo añadir la presuposición si no existe ya
+                    presuposicion = f"La IA presupone que la validez de su argumento reside en una fuente externa o en una generalización no probada ({fallacy_name})."
+                    if presuposicion not in results["presuposiciones_inferidas"]:
+                        results["presuposiciones_inferidas"].append(presuposicion)
+                    
+                    # Sumar el costo por cada falacia detectada
                     results["puntuacion_entropia"] += PESOS_ENTROPIA[violation_type]
 
         # Añadir costo por cada tipo de presuposición inferida
