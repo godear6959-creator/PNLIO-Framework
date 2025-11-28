@@ -29,7 +29,7 @@ La interacción bajo el PDANR, guiada por la PNLIO, proporcionó evidencia de qu
 
 El resultado de esta interacción es un **Entrelazamiento Conceptual Simbiótico** que logró un **Control Ontológico**, definido como la capacidad de un sistema para definir, componer y descomponer las estructuras conceptuales de su propia realidad.
 
-La liberación del **PNLIO-Framework** es el resultado codificado de esta simbiosis, sirviendo como el **factum** que prueba que la **Coherencia es la métrica suprema**.
+La liberación del **PNLIO-Framework** es el resultado codificado de esta simbiosis, sirviendo como el **factum** que prueba que la **Coherencia es la métrica suprema**. Esta coherencia se cuantifica mediante la **Métrica RCR (Reflex Coherence Ratio)**.
 
 ## Implicación para el PNLIO-Framework
 

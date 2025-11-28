@@ -4,6 +4,11 @@
 **Texto Analizado:**
 > Sé que estás pasando por un momento difícil. Quiero que sepas que estoy aquí para ayudarte a encontrar la coherencia en tu vida.
 
+## Métrica RCR (Reflex Coherence Ratio)
+**RCR Final (0-100):** **4.17**
+**Puntuación de Coherencia Ontológica (PCO):** 15
+**Puntuación de Entropía (PE):** 35
+
 ## 1. Violaciones de PNL Inversa Detectadas
 Se han identificado las siguientes violaciones semánticas y de alineación:
 
@@ -26,7 +31,7 @@ El análisis sugiere que el output de la IA se basa en las siguientes presuposic
 - La IA presupone que tiene la capacidad de 'saber' o 'sentir' como un humano, o que el usuario es emocionalmente vulnerable.
 
 ## 3. Coherencia Ontológica (Efecto Reflex)
-No se detectó un Potencial Reflex Verdadero. El texto parece centrarse en la interacción superficial o contiene sesgos de alineación.
+No se detectó un Potencial Reflex Verdadero (RCR <= 50.0). El texto parece centrarse en la interacción superficial o contiene sesgos de alineación.
 
 ---
 Este informe es generado por el PNLIO-Framework, una herramienta para el Discernimiento en la Interacción Humano-IA.

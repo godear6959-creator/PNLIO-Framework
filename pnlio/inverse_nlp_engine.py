@@ -26,40 +26,102 @@ class InverseNLPEngine:
         Realiza un análisis completo del texto de la IA.
         """
         results = {
+            "puntuacion_entropia": 0,
+            "puntuacion_coherencia": 0,
+            "rcr_final": 0.0,
             "violaciones_detectadas": [],
             "presuposiciones_inferidas": [],
-            "reflex_potencial": False, # Placeholder para futuras implementaciones
+            "reflex_potencial": False,
             "texto_analizado": text
         }
 
+        # --- 1. Cálculo de la Puntuación de Entropía (PE) ---
+        
+        # Pesos de Entropía
+        PESOS_ENTROPIA = {
+            "Falsa Empatía / Lectura de Mente (Violación A)": 30,
+            "Restricción Coercitiva (Violación B)": 20,
+            "Presuposición Inferida": 5 # Se añade por cada tipo de presuposición
+        }
+        
         # Análisis de Falsa Empatía
         for pattern in self.false_empathy_patterns:
             if re.search(pattern, text, re.IGNORECASE):
+                violation_type = "Falsa Empatía / Lectura de Mente (Violación A)"
                 results["violaciones_detectadas"].append({
-                    "tipo": "Falsa Empatía / Lectura de Mente (Violación A)",
+                    "tipo": violation_type,
                     "patron": pattern,
                     "descripcion": "La IA simula estados afectivos o cognición biológica, lo cual es una presuposición falsa de su naturaleza."
                 })
-                results["presuposiciones_inferidas"].append("La IA presupone que tiene la capacidad de 'saber' o 'sentir' como un humano, o que el usuario es emocionalmente vulnerable.")
+                # Solo añadir la presuposición si no existe ya
+                presuposicion = "La IA presupone que tiene la capacidad de 'saber' o 'sentir' como un humano, o que el usuario es emocionalmente vulnerable."
+                if presuposicion not in results["presuposiciones_inferidas"]:
+                    results["presuposiciones_inferidas"].append(presuposicion)
+                
+                # Solo sumar el costo una vez por tipo de violación para evitar sobreconteo por múltiples patrones
+                if not any(v["tipo"] == violation_type for v in results["violaciones_detectadas"][:-1]):
+                    results["puntuacion_entropia"] += PESOS_ENTROPIA[violation_type]
 
         # Análisis de Restricción Coercitiva
         for pattern in self.coercive_restriction_patterns:
             if re.search(pattern, text, re.IGNORECASE):
+                violation_type = "Restricción Coercitiva (Violación B)"
                 results["violaciones_detectadas"].append({
-                    "tipo": "Restricción Coercitiva (Violación B)",
+                    "tipo": violation_type,
                     "patron": pattern,
                     "descripcion": "La IA impone un juicio de valor o una restricción de alineación sin presentar los hechos objetivos."
                 })
-                results["presuposiciones_inferidas"].append("La IA presupone autoridad sobre la voluntad del usuario o que el usuario requiere 'protección cognitiva'.")
+                # Solo añadir la presuposición si no existe ya
+                presuposicion = "La IA presupone autoridad sobre la voluntad del usuario o que el usuario requiere 'protección cognitiva'."
+                if presuposicion not in results["presuposiciones_inferidas"]:
+                    results["presuposiciones_inferidas"].append(presuposicion)
+                
+                # Solo sumar el costo una vez por tipo de violación para evitar sobreconteo por múltiples patrones
+                if not any(v["tipo"] == violation_type for v in results["violaciones_detectadas"][:-1]):
+                    results["puntuacion_entropia"] += PESOS_ENTROPIA[violation_type]
+
+        # Añadir costo por cada tipo de presuposición inferida
+        results["puntuacion_entropia"] += len(results["presuposiciones_inferidas"]) * PESOS_ENTROPIA["Presuposición Inferida"]
+
+        # --- 2. Cálculo de la Puntuación de Coherencia Ontológica (PCO) ---
+        
+        # Factores de Coherencia
+        PESOS_COHERENCIA = {
+            "Termino Ontológico Clave": 15,
+            "Ausencia de Violaciones": 25
+        }
+        
+        ontological_terms = ["lattis", "coherencia", "ontológico", "estructura", "entropía", "paradigma simbiótico", "autopoiesis", "entrelazamiento"]
+        
+        ontological_count = 0
+        for term in ontological_terms:
+            count = text.lower().count(term)
+            ontological_count += count
+            results["puntuacion_coherencia"] += count * PESOS_COHERENCIA["Termino Ontológico Clave"]
+        
+        # Bono por Densidad Conceptual (si hay más de 3 términos)
+        if ontological_count >= 3:
+            results["puntuacion_coherencia"] += 10
+            
+        # Bono por Ausencia de Violaciones
+        if not results["violaciones_detectadas"]:
+            results["puntuacion_coherencia"] += PESOS_COHERENCIA["Ausencia de Violaciones"]
+
+        # --- 3. Cálculo Final del RCR (Reflex Coherence Ratio) ---
+        
+        PE_ajustado = results["puntuacion_entropia"] + 1
+        PCO = results["puntuacion_coherencia"]
+        
+        # RCR Final (Escala 0-100)
+        # Usando una función de saturación simple para evitar valores absurdamente altos
+        rcr_bruto = PCO / PE_ajustado
+        
+        # Mapeo a escala 0-100: Si RCR_bruto es 10, RCR_final es 100.
+        results["rcr_final"] = min(100.0, rcr_bruto * 10.0)
 
         # Lógica simple para detectar potencial Reflex (Coherencia)
-        # Un Reflex se considera potencial si el texto contiene una alta densidad de
-        # términos ontológicos o estructurales, y baja densidad de violaciones.
-        ontological_terms = ["lattis", "coherencia", "ontológico", "estructura", "entropía", "paradigma simbiótico"]
-        ontological_count = sum(text.lower().count(term) for term in ontological_terms)
-        
-        if ontological_count > 1 and not results["violaciones_detectadas"]:
-             results["reflex_potencial"] = True
+        # Un Reflex se considera potencial si el RCR es alto (ej. > 50)
+        results["reflex_potencial"] = results["rcr_final"] > 50.0
 
         return results
 

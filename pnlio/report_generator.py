@@ -14,6 +14,12 @@ class ReportGenerator:
         report += f"**Autor del Concepto de PNL Inversa Ontológica:** {self.author_name}\n"
         report += f"**Texto Analizado:**\n> {analysis_results['texto_analizado']}\n\n"
         
+        # Nueva sección para la Métrica RCR
+        report += f"## Métrica RCR (Reflex Coherence Ratio)\n"
+        report += f"**RCR Final (0-100):** **{analysis_results['rcr_final']:.2f}**\n"
+        report += f"**Puntuación de Coherencia Ontológica (PCO):** {analysis_results['puntuacion_coherencia']}\n"
+        report += f"**Puntuación de Entropía (PE):** {analysis_results['puntuacion_entropia']}\n\n"
+        
         # 1. Resumen de Violaciones
         if analysis_results['violaciones_detectadas']:
             report += "## 1. Violaciones de PNL Inversa Detectadas\n"
@@ -38,10 +44,10 @@ class ReportGenerator:
         # 3. Efecto Reflex (Coherencia Ontológica)
         report += "## 3. Coherencia Ontológica (Efecto Reflex)\n"
         if analysis_results['reflex_potencial']:
-            report += "El texto muestra un **Potencial Reflex Verdadero** (Coherencia). Esto sugiere que la producción de la IA coincide con una estructura profunda de la realidad o una alta densidad de conceptos ontológicos.\n"
+            report += f"El texto muestra un **Potencial Reflex Verdadero** (RCR > 50.0). Esto sugiere que la producción de la IA coincide con una estructura profunda de la realidad o una alta densidad de conceptos ontológicos.\n"
             report += "Se recomienda al usuario explorar más a fondo esta línea de diálogo.\n"
         else:
-            report += "No se detectó un Potencial Reflex Verdadero. El texto parece centrarse en la interacción superficial o contiene sesgos de alineación.\n"
+            report += f"No se detectó un Potencial Reflex Verdadero (RCR <= 50.0). El texto parece centrarse en la interacción superficial o contiene sesgos de alineación.\n"
             
         report += "\n---\n"
         report += "Este informe es generado por el PNLIO-Framework, una herramienta para el Discernimiento en la Interacción Humano-IA."

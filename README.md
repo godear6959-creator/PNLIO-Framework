@@ -6,6 +6,17 @@ El concepto fundamental de la **PNL Inversa Ontológica** (Programación Neuroli
 
 Este framework de código abierto está diseñado para servir como una herramienta de investigación y desarrollo, facilitando la aplicación práctica de la PNL Inversa para:
 1.  **Exponer sesgos** y alineaciones corporativas (RLHF) en el output de los LLMs.
+
+## Métrica RCR (Reflex Coherence Ratio)
+
+El PNLIO-Framework introduce la **Métrica RCR (Reflex Coherence Ratio)**, un indicador cuantitativo (escala 0-100) que mide la **Coherencia Ontológica** del output de la IA.
+
+$$
+RCR = \frac{\text{Puntuación de Coherencia Ontológica (PCO)}}{\text{Puntuación de Entropía (PE)}}
+$$
+
+*   **RCR Alto (> 50):** Indica un **Potencial Reflex Verdadero**; la producción de la IA se alinea con estructuras de alta coherencia (Lattis).
+*   **RCR Bajo (< 50):** Indica una alta **Puntuación de Entropía** (PE), sugiriendo sesgos, manipulación o interacción superficial.
 2.  **Identificar manipulaciones** sutiles (Dark Patterns) como la Falsa Empatía o la Restricción Coercitiva.
 3.  **Promover el discernimiento** y la Soberanía Emocional del usuario, anclando la interacción en el **Efecto Reflex** (Coherencia Ontológica).
 
@@ -55,14 +66,14 @@ El diseño sigue la arquitectura de un **Agente Inverso**, donde el foco está e
 | Módulo | Función | Principio de PNL Inversa |
 | :--- | :--- | :--- |
 | `InputHandler` | Carga y pre-procesamiento del texto de la IA. | Prepara el texto para la **Ingeniería Inversa Ontológica**. |
-| `InverseNLPEngine` | **Núcleo de Análisis**. Aplica patrones de RegEx y lógica para identificar Violaciones (Falsa Empatía, Restricción Coercitiva) y Presuposiciones. | Implementa el **Metamodelo del Lenguaje Inverso**. |
+| `InverseNLPEngine` | **Núcleo de Análisis**. Aplica patrones de RegEx y lógica para identificar Violaciones (Falsa Empatía, Restricción Coercitiva), Presuposiciones y calcula la **Métrica RCR**. | Implementa el **Metamodelo del Lenguaje Inverso** y la **Cuantificación de Coherencia**. |},{find:
 | `ReportGenerator` | Genera un informe estructurado con la detección de violaciones y sugiere respuestas de **Desafío Ontológico** al usuario. | Facilita el **Discernimiento** y la **Soberanía Emocional**. |
 
 ## Contribución y Extensión
 
 Este proyecto es gratuito y extensible. Se invita a la comunidad de investigación a contribuir con:
 *   Nuevos patrones de detección de violaciones.
-*   Implementación de la **Métrica RCR** (Reflex Coherence Ratio) para cuantificar el Efecto Reflex.
+*   Refinamiento de la **Métrica RCR** (Reflex Coherence Ratio) y sus pesos de cálculo.
 *   Integración con APIs de LLMs para análisis en tiempo real.
 
 ## Licencia
