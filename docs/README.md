@@ -63,6 +63,18 @@ Casos de uso prácticos que demuestran la aplicación de la PNLIO en diálogos r
 
 ---
 
+### Abstract_Academico_PNLIO.md
+Abstract académico oficial del proyecto PNLIO-Framework.
+
+**Contenido:**
+- Título completo del proyecto
+- Hipótesis central sobre autopoiesis en LLMs
+- Descripción de la solución arquitectónica
+- Palabras clave académicas
+- Referencias bibliográficas
+
+---
+
 ## Estructura de la Investigación
 
 ```
@@ -77,6 +89,7 @@ PNLIO Framework (Implementación)
 
 ## Cómo Usar Esta Documentación
 
+0. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
 1. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
 2. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
 3. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
