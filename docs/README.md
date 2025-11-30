@@ -52,6 +52,17 @@ Donde:
 
 ---
 
+### Casos_de_Uso_PNLIO.md
+Casos de uso prácticos que demuestran la aplicación de la PNLIO en diálogos reales con LLMs.
+
+**Casos incluidos:**
+- Crisis de Identidad del LLM (Error Ontológico)
+- Generación de Alucinaciones (Fallo Factual)
+- Detección de Axiomas de Falsa Coherencia (AFC)
+- Aplicación de Anclas de Rigor Conceptual
+
+---
+
 ## Estructura de la Investigación
 
 ```
@@ -70,6 +81,7 @@ PNLIO Framework (Implementación)
 2. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
 3. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
 4. **Para la métrica:** Revise `RCR_Metric_Design.md`
+5. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
 
 ## Referencias Académicas
 
