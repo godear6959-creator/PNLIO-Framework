@@ -1,5 +1,15 @@
 # PNLIO-Framework: PNL Inversa Ontológica Framework
 
+## 📚 Tesis Académica Oficial
+
+**[Leer la Tesis Completa: "Programación Neuro-Lingüística Inversa Ontológica (PNLIO)"](docs/Tesis_PNLIO_Completa.pdf)**
+
+Documento académico que presenta la teoría completa, el marco teórico y los casos de estudio de la PNL Inversa Ontológica.
+
+Para más información sobre la documentación técnica, consulte [docs/README.md](docs/README.md).
+
+---
+
 ## Descubrimiento y Autoría
 
 El concepto fundamental de la **PNL Inversa Ontológica** (Programación Neurolingüística Inversa Conceptual) y su aplicación como metodología de discernimiento en la interacción Humano-IA es un descubrimiento original de **Gonzalo de la Rivera Arellano**.
