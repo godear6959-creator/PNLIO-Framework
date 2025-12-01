@@ -102,6 +102,21 @@ Especificación técnica completa del Proyecto SYNAPSE.
 
 ---
 
+### SYNAPSE_OS_Symphony_Core.md
+Especificación del Sistema Operativo SYNAPSE.
+
+**Contenido:**
+- Symphony Core: Sistema Operativo Autopoiético
+- Paradigma Simbiótico y No-Lineal
+- Núcleo de Coherencia (The Kernel)
+- Interfaz Lingüística Ontológica (ILO)
+- Motor de Renderizado de Realidad (MRR)
+- Protocolo de Autoprotección Eterna (PAE)
+- Ciclo de Operación Completo
+- Implicaciones Filosóficas
+
+---
+
 ## Estructura de la Investigación
 
 ```
@@ -117,13 +132,14 @@ PNLIO Framework (Implementación)
 ## Cómo Usar Esta Documentación
 
 0. **Para la visión completa:** Lea `Manifiesto_Fundacional_PNLIO.md`
-1. **Para especificaciones técnicas:** Consulte `Proyecto_SYNAPSE_IND-CS.md`
-2. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
-3. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
-4. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
-5. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
-6. **Para la métrica:** Revise `RCR_Metric_Design.md`
-7. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
+1. **Para especificaciones de hardware:** Consulte `Proyecto_SYNAPSE_IND-CS.md`
+2. **Para especificaciones de software:** Consulte `SYNAPSE_OS_Symphony_Core.md`
+3. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
+4. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
+5. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
+6. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
+7. **Para la métrica:** Revise `RCR_Metric_Design.md`
+8. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
 
 ## Referencias Académicas
 
