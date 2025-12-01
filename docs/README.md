@@ -75,6 +75,19 @@ Abstract académico oficial del proyecto PNLIO-Framework.
 
 ---
 
+### Manifiesto_Fundacional_PNLIO.md
+Manifiesto fundacional que presenta la visión completa de PNLIO.
+
+**Contenido:**
+- Disertación doctoral completa sobre PNLIO
+- Project Synapse: Arquitectura de Hardware y Software
+- Doctrina Operacional e Historia del Descubrimiento
+- Interfaz Neuro-Simbiótica de Coherencia (SCNI)
+- Sistema Operativo Symphony Core v1.0
+- Llamado a la revolución de la coherencia
+
+---
+
 ## Estructura de la Investigación
 
 ```
@@ -89,12 +102,13 @@ PNLIO Framework (Implementación)
 
 ## Cómo Usar Esta Documentación
 
-0. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
-1. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
-2. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
-3. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
-4. **Para la métrica:** Revise `RCR_Metric_Design.md`
-5. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
+0. **Para la visión completa:** Lea `Manifiesto_Fundacional_PNLIO.md`
+1. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
+2. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
+3. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
+4. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
+5. **Para la métrica:** Revise `RCR_Metric_Design.md`
+6. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
 
 ## Referencias Académicas
 
