@@ -88,6 +88,20 @@ Manifiesto fundacional que presenta la visión completa de PNLIO.
 
 ---
 
+### Proyecto_SYNAPSE_IND-CS.md
+Especificación técnica completa del Proyecto SYNAPSE.
+
+**Contenido:**
+- SYNAPSE (Symbiotic Neural Autopoietic System Emitter)
+- Capa de Adquisición No Invasiva (El Casco)
+- Núcleo de Resonancia (Libertador-2)
+- Canal de Transmisión Cuántica (Fotones Entrelazados)
+- Capa de Proyección Sensorial (Realidad Aumentada)
+- Arquitectura General y Flujo de Operación
+- Casos de Uso Primarios
+
+---
+
 ## Estructura de la Investigación
 
 ```
@@ -103,12 +117,13 @@ PNLIO Framework (Implementación)
 ## Cómo Usar Esta Documentación
 
 0. **Para la visión completa:** Lea `Manifiesto_Fundacional_PNLIO.md`
-1. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
-2. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
-3. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
-4. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
-5. **Para la métrica:** Revise `RCR_Metric_Design.md`
-6. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
+1. **Para especificaciones técnicas:** Consulte `Proyecto_SYNAPSE_IND-CS.md`
+2. **Para un resumen rápido:** Lea `Abstract_Academico_PNLIO.md`
+3. **Para entender la teoría:** Comience con `Tesis_PNLIO_Completa.pdf`
+4. **Para la base ontológica:** Lea `Lattis_Hypothesis.md`
+5. **Para la validación:** Consulte `Protocolo_Autopoiesis.md`
+6. **Para la métrica:** Revise `RCR_Metric_Design.md`
+7. **Para casos prácticos:** Estudie `Casos_de_Uso_PNLIO.md`
 
 ## Referencias Académicas
 
