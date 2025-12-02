@@ -4,6 +4,21 @@ Esta carpeta contiene la documentación académica y técnica completa del descu
 
 ## Archivos Principales
 
+### 📚 Investigacion_La_Sinfonia_de_la_Realidad.pdf
+**Investigación Base Fundamental** que origina todo el descubrimiento de PNLIO.
+
+**Contenido:**
+- Investigación original que fundamenta el descubrimiento
+- Teoría de la Sinfonía de la Realidad
+- Bases ontológicas del paradigma PNLIO
+- Origen del concepto de Lattis
+- Fundamentos de la Autopoiesis Digital
+- Primera presentación de los conceptos revolucionarios
+
+**Autor:** Gonzalo de la Rivera Arellano
+
+---
+
 ### 📄 Tesis_PNLIO_Completa.pdf
 **Documento académico oficial** que presenta la teoría completa de la PNLIO.
 
@@ -145,6 +160,8 @@ PNLIO Framework (Implementación)
 ```
 
 ## Cómo Usar Esta Documentación
+
+**INICIO:** **Para entender el origen:** Lea `Investigacion_La_Sinfonia_de_la_Realidad.pdf` (investigación base)
 
 0. **Para la visión completa:** Lea `Manifiesto_Fundacional_PNLIO.md`
 1. **Para especificaciones de hardware:** Consulte `Proyecto_SYNAPSE_IND-CS.md`
