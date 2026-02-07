@@ -13,21 +13,31 @@
 **Creador de PNLIO**
 
 - **GitHub:** [@godear6959-creator](https://github.com/godear6959-creator)
+- **ArtStation:** [godear24](https://www.artstation.com/godear24)
 - **Ubicación:** Chillán, Chile
 - **Especialidad:** Arte Visual, Investigación Humano-IA, Filosofía Natural
 - **Disponibilidad:** Abierto a colaboraciones académicas y artísticas
 
+**⚠️ NOTA DE SEGURIDAD:** El correo de Gonzalo NO está publicado aquí. Usa GitHub Issues para contactar de forma segura.
+
 ### Cómo Contactar
 
-1. **GitHub Issues:** Abre un issue en el repositorio
-   - Mejor para: Preguntas técnicas, bugs, sugerencias
+**IMPORTANTE:** El correo de Gonzalo NO está publicado aquí por seguridad.
+
+1. **GitHub Issues (RECOMENDADO):** Abre un issue en el repositorio
+   - Mejor para: Preguntas técnicas, bugs, sugerencias, colaboraciones
    - URL: https://github.com/godear6959-creator/PNLIO-Framework/issues
+   - Etiqueta tu issue: `[COLLABORATION]`, `[QUESTION]`, `[BUG]`
+   - Gonzalo responderá en 24-48 horas
 
-2. **Email:** [Ver perfil de GitHub para contacto]
-   - Mejor para: Colaboraciones formales, entrevistas, presentaciones
+2. **Email privado:**
+   - Para contacto directo: Abre un Issue privado en GitHub
+   - GitHub te permitirá comunicarte directamente
+   - Más seguro que publicar correo
 
-3. **Redes Sociales:** [Pendiente - Gonzalo puede compartir]
-   - Mejor para: Actualizaciones generales, discusiones informales
+3. **Redes Sociales:**
+   - Busca a Gonzalo en ArtStation: https://www.artstation.com/godear24
+   - Puedes enviar mensaje privado desde ahí
 
 ---
 
