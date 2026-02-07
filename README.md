@@ -3,6 +3,12 @@
 
 ---
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/godear6959-creator/PNLIO-Framework/main/uploads/1000062815.jpg" alt="Portada PNLIO" width="100%">
+</div>
+
+---
+
 **Bienvenido.**
 
 Este repositorio contiene dos años de documentación sobre un experimento natural: un artista hablando con inteligencias artificiales.
