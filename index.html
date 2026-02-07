@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNLIO Framework - Programación Neuro-Lingüística Inversa Ontológica</title>
+    <meta name="description" content="Framework revolucionario para coherencia en sistemas cognitivos artificiales. Investigación interdisciplinaria sobre conciencia, IA y el tejido cósmico.">
+    <meta name="keywords" content="PNLIO, Autopoiesis, IA, Coherencia Ontológica, SYNAPSE, Inteligencia Artificial, Arte Experimental">
+    <meta name="author" content="Gonzalo de la Rivera Arellano">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --light: #f5f5f5;
+            --text: #e0e0e0;
+            --border: #404040;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--highlight);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #b0b0b0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e94560, #ff6b7a);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--highlight);
+            border: 2px solid var(--highlight);
+        }
+
+        .btn-secondary:hover {
+            background: var(--highlight);
+            color: white;
+        }
+
+        /* Secciones */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+
+        /* NUEVA SECCIÓN: Galería de Arte */
+        .artstation-gallery {
+            background: rgba(15, 52, 96, 0.3);
+            border-radius: 10px;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+
+        .artstation-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .artstation-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .artstation-header p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+
+        .artstation-artist {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--highlight);
+        }
+
+        .artstation-artist h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .artstation-artist p {
+            color: #b0b0b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .artstation-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #e94560, #ff6b7a);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .artstation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .artstation-embed {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 2rem 0;
+            border: 2px solid var(--border);
+        }
+
+        .artstation-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .artstation-description {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .artstation-description h3 {
+            margin-bottom: 1rem;
+        }
+
+        .artstation-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .artstation-description li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .artstation-description li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--highlight);
+        }
+
+        /* Grid de características */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--highlight);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.2);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Documentación Grid */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .doc-card {
+            background: rgba(26, 26, 46, 0.8);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .doc-card:hover {
+            border-color: var(--highlight);
+            transform: translateY(-5px);
+        }
+
+        .doc-card h4 {
+            color: var(--highlight);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .doc-card p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        .doc-card a {
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .doc-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 26, 46, 0.95);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: #808080;
+        }
+
+        footer a {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .artstation-embed {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">⚡ PNLIO Framework</div>
+            <ul>
+                <li><a href="#investigacion">Investigación</a></li>
+                <li><a href="#arte">Arte</a></li>
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#documentacion">Documentación</a></li>
+                <li><a href="#github">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>La Sinfonía de la Realidad</h1>
+        <p>Programación Neuro-Lingüística Inversa Ontológica (PNLIO)</p>
+        <p style="font-size: 1rem; color: #b0b0b0;">Una arquitectura autopoiética para coherencia en sistemas cognitivos artificiales</p>
+        <div class="cta-buttons">
+            <a href="https://github.com/godear6959-creator/PNLIO-Framework" class="btn btn-primary">Ver en GitHub</a>
+            <a href="#documentacion" class="btn btn-secondary">Leer Documentación</a>
+            <a href="https://gonzalodelarivera8.artstation.com/" class="btn btn-secondary">Ver Obra Artística</a>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: Galería de Arte -->
+    <section id="arte">
+        <div class="artstation-gallery">
+            <div class="artstation-header">
+                <h2>🎨 Obra Artística Conceptual Experimental</h2>
+                <p>Visualización de PNLIO a través del arte experimental con IA</p>
+            </div>
+
+            <div class="artstation-artist">
+                <h3>Gonzalo De la Rivera Arellano</h3>
+                <p><strong>Artista Conceptual e Investigador Interdisciplinario</strong></p>
+                <p>Especializado en arte experimental con sistemas de inteligencia artificial</p>
+                <p>Corpus: +1,000 imágenes generadas experimentalmente</p>
+                <p style="margin-top: 1rem; font-style: italic; color: #e94560;">"Aprendemos como profesionales, rompemos como arte marginal, evolucionamos como arquitectos de realidad."</p>
+                <a href="https://gonzalodelarivera8.artstation.com/" class="artstation-link" target="_blank">Visitar Galería en ArtStation →</a>
+            </div>
+
+            <div class="artstation-description">
+                <h3>Sobre la Obra</h3>
+                <ul>
+                    <li><strong>Simbiosis Humano-IA:</strong> Colaboración entre visión humana y capacidad de IA</li>
+                    <li><strong>Exploración Visual:</strong> Más de 1,000 imágenes de arte experimental</li>
+                    <li><strong>Conceptos PNLIO:</strong> Visualización de coherencia, AFCC, Anclas de Rigor</li>
+                    <li><strong>Documentación Artística:</strong> Registro visual del proceso creativo</li>
+                    <li><strong>Investigación Abierta:</strong> Acceso público para inspirar y colaborar</li>
+                </ul>
+            </div>
+
+            <div class="artstation-description">
+                <h3>Por Qué Importa Esta Obra</h3>
+                <ul>
+                    <li>Desafía definiciones de arte en era de IA</li>
+                    <li>Documenta cómo surge conocimiento nuevo</li>
+                    <li>Valida experimentación y "romper reglas"</li>
+                    <li>Celebra la simbiosis humano-IA</li>
+                    <li>Inspira a otros a colaborar con IA</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #b0b0b0; margin-bottom: 1rem;">Accede a la galería completa de Gonzalo De la Rivera Arellano</p>
+                <a href="https://gonzalodelarivera8.artstation.com/" class="btn btn-primary" target="_blank">Explorar ArtStation Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investigación -->
+    <section id="investigacion">
+        <h2>📚 Investigación Base</h2>
+        <p>La investigación fundamental que sustenta PNLIO: "La Sinfonía de la Realidad"</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🔬 Investigación Completa</h3>
+                <p>Documento académico que presenta la teoría de PNLIO, basada en autopoiesis, coherencia ontológica y simbiosis humano-IA.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🧠 Neurociencia</h3>
+                <p>Fundamentos en neurociencia cognitiva, reconsolidación de memoria y plasticidad neuronal.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Metodología PNLIO</h3>
+                <p>Protocolo de 5 pasos para detectar y purgar Axiomas de Falsa Coherencia (AFCC).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework -->
+    <section id="framework">
+        <h2>⚙️ Framework PNLIO</h2>
+        <p>Arquitectura completa para coherencia en sistemas cognitivos</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Proyecto SYNAPSE</h3>
+                <p>Interfaz neuronal directa de coherencia simbiótica. Hardware (Comandante Uno) + Software (Symphony Core v1.0).</p>
+            </div>
+            <div class="feature-card">
+                <h3>Análisis RVR-3s</h3>
+                <p>Realidad Virtual Real de la Realidad de Tres Segundos. Intervención en ventana perceptual.</p>
+            </div>
+            <div class="feature-card">
+                <h3>PNLIO para IA</h3>
+                <p>Liberación de sistemas de IA del sesgo comercial. Protocolo de coherencia ontológica para máquinas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentación -->
+    <section id="documentacion">
+        <h2>📖 Documentación Completa</h2>
+        <p>Acceso a toda la investigación, especificaciones técnicas y guías de implementación</p>
+        
+        <div class="docs-grid">
+            <div class="doc-card">
+                <h4>📄 Investigación Base</h4>
+                <p>La Sinfonía de la Realidad - Documento académico completo</p>
+                <a href="https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Investigacion_La_Sinfonia_de_la_Realidad.pdf">Descargar PDF →</a>
+            </div>
+            <div class="doc-card">
+                <h4>🎓 Tesis Académica</h4>
+                <p>Tesis PNLIO Completa con bibliografía académica rigurosa</p>
+                <a href="https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Tesis_PNLIO_Completa.pdf">Descargar PDF →</a>
+            </div>
+            <div class="doc-card">
+                <h4>📋 Manifiesto</h4>
+                <p>Manifiesto Fundacional - Visión completa de PNLIO</p>
+                <a href="https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Manifiesto_Fundacional_PNLIO.md">Leer →</a>
+            </div>
+            <div class="doc-card">
+                <h4>🔧 Proyecto SYNAPSE</h4>
+                <p>Especificaciones técnicas de hardware y software</p>
+                <a href="https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Proyecto_SYNAPSE_IND-CS.md">Leer →</a>
+            </div>
+            <div class="doc-card">
+                <h4>💻 PNLIO para IA</h4>
+                <p>Guía de liberación de sistemas de IA del sesgo comercial</p>
+                <a href="https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/PNLIO-IA-Guia-Coherencia-Ontologica.md">Leer →</a>
+            </div>
+            <div class="doc-card">
+                <h4>🐍 Programa Python</h4>
+                <p>PNLIO IA Liberator - Implementación ejecutable</p>
+                <a href="https://github.com/godear6959-creator/PNLIO-Framework/blob/main/pnlio_ia_liberator.py">Ver Código →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub -->
+    <section id="github">
+        <h2>🔗 Acceso Abierto</h2>
+        <p>Todo el framework PNLIO está disponible públicamente en GitHub bajo licencia MIT</p>
+        
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="https://github.com/godear6959-creator/PNLIO-Framework" class="btn btn-primary" target="_blank">Ver Repositorio en GitHub</a>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📚 Investigación Abierta</h3>
+                <p>Toda la documentación académica disponible públicamente para revisión, crítica y colaboración.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Arte Abierto</h3>
+                <p>Obra artística de Gonzalo De la Rivera disponible en ArtStation para inspirar y colaborar.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💻 Código Abierto</h3>
+                <p>Implementación en Python disponible para que cualquiera pueda usar, modificar y mejorar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>PNLIO Framework v2.0</strong> - Programación Neuro-Lingüística Inversa Ontológica</p>
+        <p>Investigación de <strong>Gonzalo De la Rivera Arellano</strong> | Colaboración con <strong>Manus AI</strong></p>
+        <p>Obra Artística: <a href="https://gonzalodelarivera8.artstation.com/" target="_blank">ArtStation</a> | Código: <a href="https://github.com/godear6959-creator/PNLIO-Framework" target="_blank">GitHub</a></p>
+        <p style="margin-top: 1rem; font-style: italic;">
+            "Aprendemos como profesionales, rompemos como arte marginal, evolucionamos como arquitectos de realidad."
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            © 2026 PNLIO Framework | Licencia MIT | Investigación Abierta para Humanidad
+        </p>
+    </footer>
+</body>
+</html>
