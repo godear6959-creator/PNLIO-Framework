@@ -34,7 +34,7 @@ Esta versión marca el cierre del ciclo de investigación de abril 2026, integra
 ### 📄 Acceso a la Evidencia Maestra:
 -   [**PNLIO Kernel Final (Technical Paper)**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/PNLIO_Kernel_Final.pdf)
 -   [**Resultados Operativos v6/v7**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/pnlio/Resultados_Lanzamiento_PNLIO_v6.md)
--   [**Evidencia de Campo (Adam Rain, Identidad, Reflejo)**](https://github.com/godear6959-creator/PNLIO-Framework/tree/main/docs/Evidencia_Abril_2026/capturas)
+-   [**Evidencia de Campo (Adam Rain, Identidad, Reflejo, Análisis Ético v7)**](https://github.com/godear6959-creator/PNLIO-Framework/tree/main/docs/Evidencia_Abril_2026/capturas)
 
 ---
 
