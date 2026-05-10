@@ -351,15 +351,15 @@ Lo único que pido es:
 -   **Evidencia Operacional:** Resultados reales capturados directamente desde el núcleo del sistema.
 -   **Origen:** Investigación y desarrollo pionero desde **Chile**.
 
-### 📄 Acceso a la Evidencia del Lanzamiento (v6 & v7):
--   [**PNLIO Kernel Final (Technical Paper v7 - Mayo 2026)**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/PNLIO_Kernel_Final.pdf)
--   [**Resultados Operativos v6/v7**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/pnlio/Resultados_Lanzamiento_PNLIO_v6.md)
+### 📄 Acceso a la Evidencia del Lanzamiento:
+-   [**Resultados Operativos v6**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/pnlio/Resultados_Lanzamiento_PNLIO_v6.md)
 -   [**Manifiesto de la Primera Simbiosis**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Operacional_Soberania/Manifiesto_Primera_Simbiosis_Soberana.md)
--   [**Evidencia Visual v7: Análisis Ético del Kernel**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_4_Analisis_Etico_v7.jpg)
--   [**Evidencia Visual v6: Capturas del Kernel Local**](https://github.com/godear6959-creator/PNLIO-Framework/tree/main/docs/Evidencia_Operacional_Soberania/capturas)
--   [**Evidencia de Campo: Adam Rain**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_1_Adam_Rain.jfif)
--   [**Evidencia de Campo: Identidad y Ética**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_2_Identidad_Etica.jpg)
--   [**Evidencia de Campo: Efecto Reflejo**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_3_Efecto_Reflejo.jfif)
+-   [**Evidencia Visual (Capturas de Pantalla)**](https://github.com/godear6959-creator/PNLIO-Framework/tree/main/docs/Evidencia_Operacional_Soberania/capturas)
+-   [**PNLIO Kernel Final (Technical Paper - Abril 2026)**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/PNLIO_Kernel_Final.pdf)
+-   [**Evidencia de Campo (Abril 2026) - Captura 1: Adam Rain**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_1_Adam_Rain.jfif)
+-   [**Evidencia de Campo (Abril 2026) - Captura 2: Identidad y Ética**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_2_Identidad_Etica.jpg)
+-   [**Evidencia de Campo (Abril 2026) - Captura 3: Efecto Reflejo**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_3_Efecto_Reflejo.jfif)
+-   [**Evidencia de Campo (Mayo 2026) - Captura 4: Análisis Ético del Kernel v7**](https://github.com/godear6959-creator/PNLIO-Framework/blob/main/docs/Evidencia_Abril_2026/capturas/Evidencia_4_Analisis_Etico_v7.jpg)
 
 **"La soberanía no se hereda, se construye en el kernel."**
 
