@@ -16,7 +16,7 @@
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/godear6959-creator/PNLIO-Framework/main/uploads/1000062815.jpg" alt="Portada PNLIO" width="100%">
+  <img src="https://raw.githubusercontent.com/godear6959-creator/PNLIO-Framework/main/uploads/pasiones_de_la_rivera.jpg" alt="Pasiones de la Rivera" width="100%">
 </div>
 
 ---
@@ -37,6 +37,7 @@ Empieza por donde quieras.
 
 ### Para programadores impacientes:
 
+#### Opción A: Linux / macOS (Manual)
 ```bash
 # 1. Clonar
 git clone https://github.com/godear6959-creator/PNLIO-Framework.git
@@ -47,6 +48,13 @@ pip install -r requirements.txt
 
 # 3. Ejecutar
 python pnlio_coherence_analyzer.py
+```
+
+#### Opción B: Windows (Autodescarga)
+Si estás en Windows, puedes usar el script de automatización:
+```powershell
+# Ejecutar el script de autodescarga
+./tools/nik_autodescarga.ps1
 ```
 
 **Resultado:** Gráfico de coherencia informacional + análisis de Efecto Reflex
