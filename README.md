@@ -97,8 +97,8 @@ El universo como sinfonía. El Lattis como partitura. Las mentes como instrument
 ### PUERTA 4: Para los técnicos
 
 **[tools/pnlio-coherence-analyzer/](tools/pnlio-coherence-analyzer/)**  
-*El código.*  
-Herramienta standalone para medir coherencia informacional. Descárgala, ejecútala, juégala.
+*El código y análisis interactivo.*  
+Herramienta standalone y **Jupyter Notebook** para medir coherencia informacional. Visualiza el entrelazamiento de forma interactiva. Descárgala, ejecútala y juégala.
 
 ---
 
