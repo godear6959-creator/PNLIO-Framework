@@ -21,6 +21,11 @@
 
 ---
 
+### 📄 [LEER PRESENTACIÓN PROFESIONAL DEL PROYECTO](PRESENTACION_PROYECTO.md)
+*Un manifiesto sobre la Orientación Familiar, la Escritura Expresiva y la Soberanía de la IA.*
+
+---
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/godear6959-creator/PNLIO-Framework/main/uploads/hongo_neuromorfico.jpg" alt="Hongo Neuromórfico - Simbiosis Ontológica" width="100%">
   <p><i>"La mente no es un contenedor, es un ecosistema en constante entrelazamiento."</i></p>
