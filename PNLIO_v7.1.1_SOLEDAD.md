@@ -1,0 +1,129 @@
+# PNLIO v7.1.1 — SOLEDAD
+
+**Kernel de Inteligencia Artificial Local — Framework RAG 100% Offline**
+
+*Ollama + Phi-3 + ChromaDB | Optimizado para 5 GB RAM*
+
+**Autor:** Gonzalo Mauricio de la Rivera Arellano (Godear24)
+**Ubicación:** Chillán, Ñuble, Chile
+**ORCID:** [0009-0001-9455-8416](https://orcid.org/0009-0001-9455-8416)
+**GitHub:** [github.com/godear6959-creator](https://github.com/godear6959-creator)
+
+**Estado: En estudio / fase de pruebas**
+
+---
+
+## ¿Qué es y para qué sirve?
+
+SOLEDAD es un kernel de inteligencia artificial que corre completamente en el computador del usuario, sin conexión a servicios en la nube. Combina tres piezas ya existentes y de código abierto — el motor de inferencia Ollama, el modelo de lenguaje Phi-3 de Microsoft, y la base de datos vectorial ChromaDB — para dar respuestas basadas en documentos y páginas web que el propio usuario carga al sistema, en vez de depender de una API externa.
+
+En términos prácticos: es un asistente tipo "pregúntale a tus documentos" que funciona sin internet (salvo cuando se le pide explícitamente extraer una página web), pensado para hardware modesto (5 GB de RAM) y para casos donde la privacidad de los datos es prioritaria — no se envía nada a servidores externos.
+
+Este documento describe la arquitectura, requisitos, instalación, uso y código fuente completo del sistema, listo para desplegar.
+
+## 1. Componentes principales
+
+- **Motor de inferencia:** Ollama (modelo `phi3:3.8b-mini-4k-instruct-q4_K_M`)
+- **Base vectorial:** ChromaDB (almacenamiento local persistente)
+- **Extracción web:** requests + BeautifulSoup (módulo LATTIS)
+- **Ingesta de PDF:** LangChain (PyPDFLoader)
+- **Monitor de carpeta:** watchdog — indexa automáticamente nuevos PDF
+
+## 2. Requisitos del sistema
+
+**Hardware mínimo:** 5 GB de RAM, 2 GB de almacenamiento libre, procesador x86_64 o ARM64 compatible con Ollama.
+
+**Software:** Python 3.9+, Ollama instalado y en ejecución, modelo `phi3:3.8b-mini-4k-instruct-q4_K_M` descargado.
+
+**Dependencias Python:**
+
+```bash
+pip install ollama chromadb requests beautifulsoup4 watchdog langchain-community
+```
+
+## 3. Guía de instalación
+
+**Paso 1 — Instalar Ollama:**
+
+```bash
+# Linux/macOS
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+Windows: descargar desde [ollama.com/download](https://ollama.com/download)
+
+**Paso 2 — Descargar el modelo:**
+
+```bash
+ollama pull phi3:3.8b-mini-4k-instruct-q4_K_M
+```
+
+**Paso 3 — Crear estructura de directorios:**
+
+```bash
+mkdir pnlio_soledad
+cd pnlio_soledad
+mkdir ingesta lattis_extraido
+```
+
+**Paso 4 — Crear entorno virtual e instalar dependencias:**
+
+```bash
+python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate      # Windows
+
+pip install ollama chromadb requests beautifulsoup4 watchdog langchain-community
+```
+
+**Paso 5 —** Guardar el código fuente (Sección 7) como `pnlio_v711.py` dentro del directorio de trabajo.
+
+**Paso 6 — Ejecutar:**
+
+```bash
+python pnlio_v711.py
+```
+
+Al iniciar, el sistema crea/verifica la base ChromaDB local, inicia el monitor de la carpeta `./ingesta`, y presenta un prompt de comandos interactivo.
+
+## 4. Uso y comandos
+
+Interfaz de comandos:
+
+- `[texto libre]` — consulta al kernel con contexto de los documentos indexados
+- `web <URL>` — extrae y guarda el contenido de una página web
+- `salir` / `exit` — detiene el monitor y cierra el kernel
+
+Copiar cualquier archivo `.pdf` a la carpeta `./ingesta` activa la indexación automática: el sistema divide el PDF en páginas y guarda cada una como documento independiente con sus metadatos.
+
+## 5. Arquitectura y privacidad
+
+- **100% offline:** sin llamadas a APIs externas de IA (salvo el módulo de extracción web, que solo se activa si el usuario lo pide explícitamente).
+- **Datos locales:** toda la memoria vectorial se guarda en disco local del usuario.
+- **Sin telemetría:** no se envía información del usuario a servidores externos.
+
+El sistema inyecta al inicio un documento de identidad que vincula al operador del sistema con el kernel, para que las respuestas mantengan contexto consistente sobre quién opera el sistema y con qué propósito.
+
+## 6. Métrica de coherencia (RCR)
+
+El sistema usa una recuperación contextual estricta (máximo 2 documentos por consulta) y temperatura baja (0.5) para reducir respuestas no fundamentadas en el contexto entregado.
+
+> **Nota:** una versión anterior de este documento reportaba una cifra de **"87–92% de reducción de alucinaciones"** para esta métrica. Esa cifra no cuenta con una metodología de medición documentada ni una línea base de comparación, por lo que se retira de las afirmaciones principales de este documento. El mecanismo de recuperación estricta + baja temperatura + anclaje de identidad es real y verificable en el código; el porcentaje específico de reducción está pendiente de validación con un benchmark estándar (ej. TruthfulQA, HaluEval).
+
+## 7. Solución de problemas
+
+| Error | Solución |
+|---|---|
+| `ollama` no encontrado / servicio inactivo | Verificar instalación: `ollama list`. En Linux/macOS: `sudo systemctl start ollama` |
+| Modelo phi3 no disponible | `ollama pull phi3:3.8b-mini-4k-instruct-q4_K_M` |
+| Permisos de escritura en directorios | Verificar permisos de `./pnlio_db_large`, `./ingesta` y `./lattis_extraido` |
+| Falla import de `langchain_community` | `pip install langchain-community` (o usar PyPDF2 como alternativa) |
+| Memoria insuficiente (RAM < 5GB) | Cerrar aplicaciones innecesarias; el modelo ya está en su versión más optimizada |
+
+## 8. Autoría y tecnologías de terceros
+
+**Autor:** Gonzalo Mauricio de la Rivera Arellano (Godear24) | **GitHub:** [godear6959-creator](https://github.com/godear6959-creator) | **ORCID:** [0009-0001-9455-8416](https://orcid.org/0009-0001-9455-8416)
+
+**Tecnologías de terceros utilizadas:** [Ollama](https://ollama.com), [Phi-3 de Microsoft](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct), [ChromaDB](https://trychroma.com), [LangChain](https://python.langchain.com), [Watchdog](https://github.com/gorakhargosh/watchdog).
+
+**Licencia:** uso personal y de investigación. Documento técnico de instalación, en fase de estudio y pruebas — no representa un producto terminado ni con benchmarks de rendimiento validados formalmente.
