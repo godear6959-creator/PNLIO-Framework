@@ -14,11 +14,6 @@
 ## Puertas de Entrada a la Sinfonía de la Realidad
 
 ---
-
-<div align="center">
-  <img src="uploads/pasiones_de_la_rivera.jpg" alt="Pasiones de la Rivera" width="100%">
-</div>
-
 ---
 
 <div align="center">
