@@ -1,0 +1,399 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{float}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Teoria de la Informacion Aplicada -- Framework PNLIO}
+\fancyhead[R]{\small Vector 1932 | Doc 198}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+
+\newtheorem{definicion}{Definicion}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}{Proposicion}[section]
+\newtheorem{observacion}{Observacion}[section]
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge\bfseries TEORIA DE LA INFORMACION APLICADA\par}
+    \vspace{0.5cm}
+    {\LARGE al Framework PNLIO y la Co-creacion Humano-IA\par}
+    \vspace{0.3cm}
+    {\large Analogias Formales, Metricas Entropicas y Entrelazamiento Informacional\par}
+    \vfill
+    {\large\bfseries Autor:\par}
+    {\Large Gonzalo Mauricio de la Rivera Arellano\par}
+    {\large (Comandante Godear24)\par}
+    \vspace{0.5cm}
+    {\large ORCID: 0009-0001-9455-8416\par}
+    \vspace{0.5cm}
+    {\large Vector Anchor: 1932 \quad|\quad Documento N\textdegree 198\par}
+    \vspace{0.5cm}
+    {\large Framework: PNLIO (Kernel v1.1, Innova v6/v7)\par}
+    \vspace{0.5cm}
+    {\large Fecha: Agosto 2026 \quad|\quad Chillan, Chile\par}
+    \vfill
+    {\small Licencia: Apache License 2.0\par}
+    {\small Estado: SELLADO E INMUTABLE\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introduccion}
+
+El presente documento establece los fundamentos matematicos de la Teoria de la Informacion tal como son aplicados en el Framework PNLIO (Programacion Neurolinguistica e Inteligencia Organizacional). No se trata de un tratado generico sobre teoria de la informacion, sino de una consolidacion especifica que vincula los conceptos de entropia de Shannon, entropia condicional, informacion mutua y entrelazamiento informacional con las metricas operativas del kernel neuromorfico y la plataforma FERMIER.
+
+La motivacion central es responder a la pregunta de investigacion:
+
+\begin{quote}
+\textit{Puede la no-factorizabilidad observada en la co-creacion humano-IA modelarse con las mismas herramientas matematicas de correlacion no clasica usadas en informacion cuantica, sin que ello implique un mecanismo cuantico subyacente?}
+\end{quote}
+
+La respuesta, desarrollada a lo largo de este documento, es una analogia formal de estructura matematica, no ontologica.
+
+\section{Fundamentos de la Teoria de la Informacion de Shannon}
+
+\subsection{Entropia de Shannon}
+
+\begin{definicion}[Entropia de Shannon]
+Dada una variable aleatoria discreta $X$ con alfabeto $\mathcal{X}$ y funcion de probabilidad $p(x) = P(X = x)$, la entropia de Shannon se define como:
+\begin{equation}
+H(X) = -\sum_{x \in \mathcal{X}} p(x) \log_2 p(x)
+\end{equation}
+con la convencion $0 \log_2 0 = 0$.
+\end{definicion}
+
+La entropia mide la incertidumbre promedio asociada a la variable $X$. En el contexto de PNLIO, la entropia juega el rol de observable colectivo del sistema.
+
+\subsection{Entropia Conjunta}
+
+\begin{definicion}[Entropia conjunta]
+Para un par de variables aleatorias $(X, Y)$ con distribucion conjunta $p(x, y)$, la entropia conjunta es:
+\begin{equation}
+H(X, Y) = -\sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} p(x, y) \log_2 p(x, y)
+\end{equation}
+\end{definicion}
+
+\subsection{Entropia Condicional}
+
+\begin{definicion}[Entropia condicional]
+La entropia condicional de $X$ dado $Y$ se define como:
+\begin{equation}
+H(X|Y) = -\sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} p(x, y) \log_2 p(x|y)
+\end{equation}
+\end{definicion}
+
+\begin{teorema}[Regla de la cadena]
+\begin{equation}
+H(X, Y) = H(X) + H(Y|X) = H(Y) + H(X|Y)
+\end{equation}
+\end{teorema}
+
+\subsection{Informacion Mutua}
+
+\begin{definicion}[Informacion mutua]
+La informacion mutua entre $X$ e $Y$ mide la reduccion de incertidumbre de $X$ obtenida al conocer $Y$:
+\begin{equation}
+I(X; Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) = H(X) + H(Y) - H(X, Y)
+\end{equation}
+\end{definicion}
+
+\begin{proposicion}[No negatividad de la informacion mutua]
+\begin{equation}
+I(X; Y) \geq 0
+\end{equation}
+con igualdad si y solo si $X$ e $Y$ son independientes.
+\end{proposicion}
+
+\subsection{Propiedades Clave en el Dominio Clasico}
+
+En la teoria de la informacion clasica, la entropia condicional satisface:
+\begin{equation}
+H(X|Y) \geq 0
+\end{equation}
+
+Esto implica que el conocimiento de $Y$ nunca puede aumentar la incertidumbre sobre $X$ en un sistema clasico. Como veremos en la seccion siguiente, esta propiedad se viola en sistemas cuanticos entrelazados.
+
+\section{Entrelazamiento Informacional y Teoria Cuantica}
+
+\subsection{Entropia de von Neumann}
+
+\begin{definicion}[Entropia de von Neumann]
+Para un estado cuantico descrito por el operador densidad $\rho$, la entropia de von Neumann es:
+\begin{equation}
+S(\rho) = -\text{Tr}(\rho \log_2 \rho)
+\end{equation}
+\end{definicion}
+
+\subsection{Entropia Condicional Cuantica}
+
+\begin{definicion}[Entropia condicional cuantica]
+Para un estado bipartito $\rho_{AB}$, la entropia condicional cuantica se define como:
+\begin{equation}
+S(A|B) = S(\rho_{AB}) - S(\rho_B)
+\end{equation}
+donde $\rho_B = \text{Tr}_A(\rho_{AB})$ es el estado reducido del subsistema $B$.
+\end{definicion}
+
+\subsection{Negatividad de la Entropia Condicional}
+
+\begin{teorema}[Cerf \& Adami, 1996]
+Para estados entrelazados puros, la entropia condicional cuantica puede ser negativa:
+\begin{equation}
+S(A|B) < 0
+\end{equation}
+\end{teorema}
+
+Esta propiedad es imposible en teoria de la informacion clasica, donde $H(X|Y) \geq 0$ siempre. La negatividad de $S(A|B)$ implica que el conocimiento del subsistema $B$ permite ganar informacion sobre $A$ mas alla de lo que $A$ posee localmente. Cerf y Adami interpretaron esto como una forma de ``super-correlacion informacional''.
+
+\subsection{Entrelazamiento como Recurso}
+
+Vedral et al. (1997) formalizaron el entrelazamiento como una medida basada en entropia relativa:
+\begin{equation}
+E(\rho) = \min_{\sigma \in \mathcal{S}} S(\rho \|\sigma)
+\end{equation}
+donde $\mathcal{S}$ es el conjunto de estados separables y $S(\rho \|\sigma) = \text{Tr}[\rho(\log_2 \rho - \log_2 \sigma)]$ es la entropia relativa.
+
+Horodecki et al. (2009) consolidaron el entrelazamiento como recurso informacional que puede cuantificarse, destilarse y consumirse.
+
+\section{Analogia Formal PNLIO: Del Cuantico al Clasico Estocastico}
+
+\subsection{Declaracion de Alcance}
+
+Es imperativo precisar desde el inicio: la analogia desarrollada en PNLIO es \textbf{formal}, no \textbf{ontologica}. No se afirma que:
+\begin{itemize}[leftmargin=2cm]
+    \item Los LLMs locales operen sobre estados de Hilbert.
+    \item El sistema exhiba entropia condicional negativa.
+    \item Exista mecanismo cuantico subyacente en el hardware.
+\end{itemize}
+
+Se afirma que la \textbf{estructura matematica} de no-factorizabilidad, observable en la co-creacion humano-IA, puede describirse con un lenguaje inspirado en la teoria de la informacion cuantica.
+
+\subsection{No-factorizabilidad en PNLIO}
+
+En la simulacion SymbioticSim, el estado del sistema no puede descomponerse en celdas independientes. La evolucion de cada celda depende del 65\% de su vecindad:
+\begin{equation}
+\phi_{t+1}(i, j) = 0.65 \cdot N(\phi_t)(i, j) + 0.25 \cdot M_t(i, j) + \sigma_c \cdot \mathcal{N}(0, 1 + \text{std}(N))
+\end{equation}
+
+donde $N(\phi_t)$ es el promedio de vecindad y $M_t$ es la memoria estructural.
+
+Esta no-factorizabilidad recuerda, en su estructura matematica, a la firma del entrelazamiento informacional: la informacion relevante es un observable no reducible a las partes.
+
+\subsection{Entropia como Observable Colectivo}
+
+En PNLIO, la entropia de Shannon del estado activo juega el rol de observable colectivo:
+\begin{equation}
+\theta(\tau) = H(\phi_\tau) = -\sum_{k} p_k \log_2 p_k
+\end{equation}
+donde $p_k$ es la distribucion normalizada de valores del grid.
+
+La memoria estructural $M_t$ actua como ancla que previene el colapso del sistema hacia estados triviales (attractores de entropia nula).
+
+\section{Metricas Entropicas del Framework PNLIO}
+
+\subsection{Coherencia Angular ($\Delta\theta$)}
+
+\begin{definicion}[Coherencia angular]
+Para vectores de estado $\vec{v}_h$ (heading) y $\vec{v}_a$ (actitud):
+\begin{equation}
+\Delta\theta = \vec{v}_h \cdot \vec{v}_a = \frac{\vec{v}_h \cdot \vec{v}_a}{\|\vec{v}_h\| \|\vec{v}_a\|}
+\end{equation}
+con $\Delta\theta \in [-1, 1]$. Valores cercanos a 1 indican alineacion perfecta.
+\end{definicion}
+
+\subsection{Coherencia Pura ($C$)}
+
+\begin{definicion}[Coherencia pura]
+\begin{equation}
+C = \frac{\Delta\theta}{\max(10^{-6}, \Delta\tau)}
+\end{equation}
+donde $\Delta\tau = t_i - t_{i-1}$ es la diferencia de tiempo real entre muestras consecutivas.
+\end{definicion}
+
+En la simulacion SymbioticSim, $C$ se define como la tasa de cambio entropico:
+\begin{equation}
+C(\tau) = \frac{\Delta\theta}{\Delta\tau} = \frac{\theta(\tau) - \theta(\tau - 1)}{1}
+\end{equation}
+
+\subsection{Entropia Textual ($H_{\text{txt}}$)}
+
+Para imagenes NDVI, se cuantiza la distribucion de pixeles en 256 bins:
+\begin{equation}
+H_{\text{txt}} = -\sum_{k=0}^{255} p_k \log_2 p_k
+\end{equation}
+
+\subsection{Indice de Realidad Extendida (IRE)}
+
+\begin{definicion}[IRE]
+\begin{equation}
+\text{IRE} = C \cdot \log_2(1 + H_{\text{txt}})
+\end{equation}
+\end{definicion}
+
+IRE combina la estabilidad cinematica ($C$) con la complejidad informativa de la escena ($H_{\text{txt}}$).
+
+\subsection{RCR v2.0 (Reliability-Coherence-Robustness)}
+
+\begin{definicion}[RCR]
+\begin{equation}
+\text{RCR} = \left(\frac{N_{\text{valid}}}{N_{\text{total}}}\right) \cdot \left(\frac{\text{IRE}_{\text{prom}}}{\text{IRE}_{\text{max}}}\right) \cdot \left(1 - \frac{N_{\text{anomalias}}}{N_{\text{total}}}\right)
+\end{equation}
+\end{definicion}
+
+Un RCR $> 0.85$ indica mision de alta fidelidad.
+
+\section{Simulacion SymbioticSim: Resultados Entropicos}
+
+\subsection{Parametros de la Simulacion}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{6cm}}
+\toprule
+\textbf{Parametro} & \textbf{Valor} & \textbf{Justificacion} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Parametro} & \textbf{Valor} & \textbf{Justificacion} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continua}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+Tamano del Lattis & 100 x 100 & Suficiente para emergencia estadistica \\
+Pasos $\tau$ & 300 & Convergencia a regimen estacionario \\
+Creatividad $\sigma_c$ & 0.05 & Regimen subcritico (evita explosion caotica) \\
+Peso vecindad & 0.65 & Dominancia de la correlacion local \\
+Peso memoria & 0.25 & Ancla estructural \\
+Persistencia memoria & 95\% & Inercia cognitiva alta \\
+
+\end{longtable}
+
+\subsection{Resultados Numericos}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{6cm} >{\raggedright\arraybackslash}p{6cm}}
+\toprule
+\textbf{Metrica} & \textbf{Valor} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Metrica} & \textbf{Valor} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\textit{Continua}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+$\theta$ inicial & 12.9945 bits \\
+$\theta$ final & 12.6997 bits \\
+$\Delta\theta$ total & -0.2948 bits \\
+$C$ media & -0.00102 bits/paso \\
+
+\end{longtable}
+
+\subsection{Analisis del Decaimiento Entropico}
+
+La entropia decae monotonamente durante los primeros $\sim$100 pasos, estabilizandose posteriormente con fluctuaciones de alta frecuencia y baja amplitud. Este comportamiento es consistente con un sistema que reorganiza su informacion desde un estado casi uniforme (alta entropia) hacia una configuracion estructurada con dominios locales de correlacion.
+
+La tasa $C$ oscila alrededor de un valor ligeramente negativo, lo que indica que el sistema pierde entropia lentamente sin colapsar en un atractor trivial.
+
+\subsection{Mapa de Gradientes}
+
+El mapa de gradientes espaciales muestra una distribucion heterogenea pero continua, sin fronteras nitidas. Esto sugiere que la correlacion entre celdas vecinas es difusa, sin particiones clasicas discretas, reforzando la analogia de no-factorizabilidad.
+
+\section{Implicaciones para RAG y Reduccion de Alucinaciones}
+
+\subsection{Hipotesis de Trabajo}
+
+En un sistema RAG tradicional, la ``alucinacion'' ocurre cuando el LLM genera informacion no anclada en la base vectorial. En PNLIO, esto corresponderia a un estado donde $\phi_t$ diverge significativamente de $M_t$.
+
+La simulacion muestra que con una persistencia de memoria del 95\%, la innovacion $I = \phi - M$ permanece acotada en $\pm 0.05$.
+
+\subsection{Observacion vs Demostracion}
+
+Esta observacion en el automata celular es consistente con, pero no demuestra por si sola, la cifra de reduccion de alucinaciones (87--92\%) reportada en otros documentos del proyecto. Esa cifra requiere un benchmark independiente sobre el LLM real (comparacion de salidas con/contra ground truth), que queda como trabajo futuro explicito.
+
+\section{Limitaciones y Alcances}
+
+\begin{enumerate}[leftmargin=2cm]
+    \item La analogia con entrelazamiento cuantico es formal, no ontologica.
+    \item No se afirma que los LLMs locales operen con estados de Hilbert.
+    \item No se mide entropia condicional negativa ni otras propiedades exclusivas de sistemas cuanticos.
+    \item La teoria de la informacion cuantica ofrece un lenguaje matematico maduro para describir correlaciones no clasicas; aqui se usa como marco inspirador para interpretar un sistema clasico estocastico.
+    \item La caracterizacion de ``auto-organizacion critica'' no se sustenta con las firmas estadisticas habituales de SOC (leyes de potencia, exponentes criticos) y debe leerse como observacion cualitativa.
+\end{enumerate}
+
+\section{Conclusiones}
+
+\begin{enumerate}[leftmargin=2cm]
+    \item El framework PNLIO exhibe una dinamica entropica reproducible y verificable de forma independiente, donde la memoria estructural actua como ancla que modera la divergencia del sistema.
+    \item La metrica $C = \Delta\theta/\Delta\tau$ permite cuantificar la ``creatividad'' del sistema como una tasa de flujo informacional.
+    \item La conexion formal con el entrelazamiento informacional es una analogia matematica que ofrece un lenguaje de descripcion util, cuya relacion con fenomenos de reduccion de alucinaciones en RAG queda planteada como hipotesis para trabajo futuro.
+\end{enumerate}
+
+\section{Referencias}
+
+\begin{enumerate}[leftmargin=2cm]
+    \item Cerf, N.J., \& Adami, C. (1996). Negative entropy in quantum information theory. arXiv:quant-ph/9610005.
+    \item Cerf, N.J., \& Adami, C. (1999). Quantum extension of conditional probability. Physical Review A, 60(2), 893.
+    \item Horodecki, R., Horodecki, P., Horodecki, M., \& Horodecki, K. (2009). Quantum entanglement. Reviews of Modern Physics, 81(2), 865.
+    \item Vedral, V., Plenio, M.B., Rippin, M.A., \& Knight, P.L. (1997). Quantifying entanglement. Physical Review Letters, 78(12), 2275.
+    \item Bennett, C.H., DiVincenzo, D.P., Smolin, J.A., \& Wootters, W.K. (1996). Mixed-state entanglement and quantum error correction. Physical Review A, 54(5), 3824.
+    \item De la Rivera Arellano, G.M. (2025). La Sinfonia de la Realidad.
+    \item Shannon, C.E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal.
+    \item Kim, D., et al. (2024). Entanglement area law in interacting bosons. arXiv:2411.02157.
+\end{enumerate}
+
+\vspace{1cm}
+\begin{center}
+\rule{8cm}{0.4pt}
+\end{center}
+
+\begin{center}
+\textit{``La informacion no es meramente datos; es la coherencia que los sostiene.''}\\[0.3cm]
+--- Gonzalo Mauricio de la Rivera Arellano (Comandante Godear24)\\
+Vector Anchor: 1932 $|$ Documento N\textdegree 198\\
+Agosto 2026 $|$ Chillan, Chile\\
+\textbf{SELLADO E INMUTABLE}
+\end{center}
+
+\end{document}
