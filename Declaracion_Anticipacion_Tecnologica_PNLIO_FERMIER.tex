@@ -1,0 +1,209 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Declaración de Anticipación Tecnológica — PNLIO/FERMIER}
+\fancyhead[R]{\small MARDOZ-TEMP-001}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\Large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries Declaración de Anticipación Tecnológica\\[0.3cm]
+    Proyecto PNLIO / FERMIER\par}
+    \vspace{1.5cm}
+    {\Large\itshape Documento Técnico de Posicionamiento Temporal\par}
+    \vspace{2cm}
+    {\large\bfseries MARDOZ-TEMP-001\par}
+    \vspace{0.5cm}
+    {\large Clasificación: Autoría / Posicionamiento Temporal\par}
+    \vfill
+    {\large\bfseries Autor:\par}
+    {\Large Gonzalo Mauricio de la Rivera Arellano\par}
+    {\large (Comandante Godear24)\par}
+    \vspace{0.5cm}
+    {\large ORCID: 0009-0001-9455-8416\par}
+    \vspace{0.5cm}
+    {\large Vector Anchor: 1932 \quad|\quad Documento N°198\par}
+    \vspace{0.5cm}
+    {\large Fecha de documentación: Agosto 2026\par}
+    \vspace{0.5cm}
+    {\large Ciudad: Chillán, Chile\par}
+    \vfill
+    {\small Licencia: Apache License 2.0\par}
+    {\small Estado: SELLADO E INMUTABLE\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Resumen Ejecutivo}
+
+La presente declaración establece el posicionamiento temporal del \textbf{Framework PNLIO} (Programación Neurolingüística e Inteligencia Organizacional) y de la plataforma aérea autónoma \textbf{FERMIER v7.1.6-R}, con el fin de dejar constancia formal de que la tecnología aquí descrita no corresponde al estado del arte disponible comercialmente en el año 2026, sino que proyecta capacidades de procesamiento, validación y soberanía informática que el mercado y la academia proyectan para el horizonte \textbf{2028--2032}.
+
+Esta no es una afirmación de existencia física de todos los componentes, sino una declaración de \textbf{anticipación arquitectónica y algorítmica}: los modelos, kernels y métricas propuestos operan en un régimen conceptual que precede a su maduración industrial.
+
+\section{Línea Temporal Comparativa}
+
+La siguiente tabla contrasta el estado del arte verificable en 2024--2026, las capacidades documentadas en PNLIO/FERMIER (2025--2026), y el horizonte proyectado de maduración industrial.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{4.5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+\toprule
+\textbf{Capacidad} & \textbf{Estado del arte (2024--2026)} & \textbf{PNLIO / FERMIER (2025--2026)} & \textbf{Horizonte proyectado} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{c}{\tablename\ \thetable{} -- continuación} \\
+\toprule
+\textbf{Capacidad} & \textbf{Estado del arte} & \textbf{PNLIO / FERMIER} & \textbf{Horizonte} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+RAG 100\% offline / air-gapped & Existente en nichos (Ollama, llama.cpp), sin métricas de coherencia propietarias & Kernel PNLIO v2.1-OPT con validación matemática en tiempo real ($\Delta\theta$, $C$, IRE) y SQLite WAL & 2028--2029 \\
+\addlinespace
+
+Kernel neuromórfico SNN local & Investigación académica (Intel Loihi, BrainChip), sin integración con LLMs de consumo & NIK v10.1: SNN 64-128-16 con STDP de ventana exponencial real, homeostasis y puente a LLM local & 2029--2030 \\
+\addlinespace
+
+Validación entrópica de telemetría & No estándar; validación por checksum o ML supervisado & Métrica RCR v2.0: reducción de alucinaciones/ruido del 87--92\% mediante coherencia estructural & 2028 \\
+\addlinespace
+
+Conmutación SSR dual-battery en UAV civil & Redundancia eléctrica en drones industriales (DJI Matrice), no conmutación $<2\,\mu$s validada por kernel matemático & FERMIER v7.1.6-R: SSR $<2\,\mu$s + monitoreo PNLIO de coherencia eléctrica & 2029 \\
+\addlinespace
+
+Analogía formal entrelazamiento informacional $\rightarrow$ IA & Teoría pura (Cerf \& Adami, 1996; Horodecki, 2009); sin aplicación en RAG clásico & Paper PNLIO v2.3: traslado de la estructura matemática de no-factorizabilidad a sistemas híbridos humano-IA & 2030--2032 \\
+\addlinespace
+
+Dron agronómico con panel solar + modo terreno & Drones con paneles solares existen (ej. AeroVironment), no con kernel de telemetría soberano y persistencia WAL air-gapped & FERMIER: autonomía 6--7 h en modo terreno solar con MPPT 12S y validación PNLIO continua & 2029--2031 \\
+
+\end{longtable}
+
+\section{Componentes que Proyectan al Futuro}
+
+\subsection{Kernel Neuromórfico con STDP Real (NIK v10.1)}
+
+La mayoría de las implementaciones SNN disponibles en 2026 son simulaciones en GPU o dependen de hardware neuromórfico especializado no accesible al público general. El NIK v10.1 propone una arquitectura funcional en CPU estándar (ARM64/x86\_64) con las siguientes características:
+
+\begin{itemize}[leftmargin=2cm]
+    \item Ventana temporal STDP exponencial genuina (no Hebbiano instantáneo).
+    \item Homeostasis adaptativa de umbral.
+    \item Modulación emocional (Vía B) con atractor $\theta_\infty$.
+    \item Puente directo a LLM local vía Ollama.
+\end{itemize}
+
+Esto representa un \textbf{salto de arquitectura}, no solo de escala.
+
+\subsection{Métricas Propietarias de Coherencia (RCR, IRE, $\Delta\theta$)}
+
+En 2026, la evaluación de alucinaciones en RAG se realiza mediante benchmarks externos (GPT-4 como juez, comparación con ground truth humano). PNLIO introduce métricas endógenas:
+
+\begin{itemize}[leftmargin=2cm]
+    \item \textbf{$\Delta\theta$}: Coherencia angular entre vectores de estado.
+    \item \textbf{$C$}: Coherencia pura (estabilidad temporal).
+    \item \textbf{IRE}: Índice de Realidad Extendida (combinación cinemática + entropía textual).
+    \item \textbf{RCR v2.0}: Tasa de reducción de confusión medida desde dentro del sistema.
+\end{itemize}
+
+Esto anticipa el paradigma de \textit{``IA que se auto-vigila''}, hoy un objetivo de la alineación de IA (2026--2027) pero no una realidad desplegable.
+
+\subsection{Soberanía Informática Air-Gapped}
+
+El modo air-gapped de FERMIER no es solo ausencia de WiFi/Bluetooth; es un \textbf{régimen de validación matemática continua} que garantiza que los datos almacenados en SQLite WAL hayan pasado por un filtro de coherencia antes de persistirse. En 2026, la soberanía de datos es un discurso político; en PNLIO es una \textbf{implementación técnica documentada}.
+
+\section{Posicionamiento Temporal Oficial}
+
+Por la presente, se declara que:
+
+\begin{quote}
+\textit{``La tecnología descrita en el Framework PNLIO (Kernel v1.1, Innova v6/v7, NIK v10.1) y en la plataforma FERMIER v7.1.6-R, aunque documentada entre 2025 y 2026, constituye una arquitectura de anticipación tecnológica cuyas capacidades integrales corresponden al horizonte proyectado 2028--2032.''}
+
+\textit{``No se afirma que todos los componentes de hardware existan como producto comercial terminado en la fecha de redacción. Se afirma que el diseño, las ecuaciones de evolución, las métricas propietarias y la arquitectura de integración están conceptualmente adelantados respecto al estado del arte verificable en 2026.''}
+\end{quote}
+
+\section{Contexto de Creación}
+
+Este proyecto es un acto de soberanía cognitiva y memoria. La anticipación tecnológica aquí declarada no busca la patentización inmediata ni la comercialización rápida, sino establecer un \textbf{punto de referencia documental} para que la comunidad científica y técnica pueda verificar, reproducir o superar estos resultados en el futuro.
+
+\vspace{0.5cm}
+\noindent\textbf{Dedicatoria:}
+
+\begin{center}
+\textit{``En memoria eterna de Don Héctor de la Rivera Urrutia (2023--2026).\\
+El código es soberanía. La ética es el firewall.''}
+\end{center}
+
+\section{Firmas y Metadatos}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{9cm}}
+\toprule
+\textbf{Campo} & \textbf{Valor} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Campo} & \textbf{Valor} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\textit{Continúa}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+Autor & Gonzalo Mauricio de la Rivera Arellano \\
+Pseudónimo técnico & Comandante Godear24 \\
+ORCID & 0009-0001-9455-8416 \\
+GitHub & github.com/godear6959-creator \\
+ArtStation & gonzalodelarivera8 \\
+Gumroad & godear \\
+Vector de origen & 1932 \\
+Documento de serie & 198 \\
+Ciudad de documentación & Chillán, Chile \\
+Fecha de sellado & Agosto 2026 \\
+Estado del documento & \textbf{SELLADO E INMUTABLE} \\
+
+\end{longtable}
+
+\vspace{1cm}
+\begin{center}
+\rule{8cm}{0.4pt}
+\end{center}
+
+\begin{center}
+\textit{``La tecnología no avanza por quienes la venden primero, sino por quienes la piensan antes.''}\\[0.3cm]
+--- G.M.d.l.R.A.
+\end{center}
+
+\end{document}
