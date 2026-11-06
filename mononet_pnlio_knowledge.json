@@ -1,0 +1,500 @@
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+PNLIO - MONONET KNOWLEDGE UPDATE
+Base semántica: SOLEDAD v7.1.1
+Autor: Gonzalo Mauricio de la Rivera Arellano
+
+Genera un corpus JSON para reconocimiento de conceptos,
+asociaciones semánticas y relaciones del ecosistema PNLIO.
+
+Solo utiliza la biblioteca estándar de Python.
+"""
+
+import json
+import hashlib
+from pathlib import Path
+from datetime import datetime, timezone
+
+VERSION = "1.0.0"
+OUTPUT = Path("mononet_pnlio_knowledge.json")
+
+
+# ==========================================================
+# 1. IDENTIDAD DEL PROYECTO
+# ==========================================================
+
+PROJECT = {
+    "id": "PNLIO",
+    "name": "Programación Neuro-Lingüística Inversa Ontológica",
+    "type": "framework_experimental",
+    "description": (
+        "Kernel y framework de orquestación de inteligencia artificial "
+        "local. Su arquitectura se organiza sobre tres principios: "
+        "memoria, continuidad y contexto."
+    ),
+    "core_principles": [
+        "memoria",
+        "continuidad",
+        "contexto"
+    ],
+    "author": "Gonzalo Mauricio de la Rivera Arellano",
+    "alias_author": "Godear24",
+    "github": "https://github.com/godear6959-creator",
+    "orcid": "0009-0001-9455-8416"
+}
+
+
+# ==========================================================
+# 2. CONCEPTOS Y VOCABULARIO
+# ==========================================================
+
+CONCEPTS = [
+
+    {
+        "id": "pnlio",
+        "term": "PNLIO",
+        "aliases": [
+            "framework pnlio",
+            "kernel pnlio",
+            "ecosistema pnlio",
+            "programacion neuro linguistica inversa ontologica"
+        ],
+        "category": "framework",
+        "definition": PROJECT["description"],
+        "status": "documented"
+    },
+
+    {
+        "id": "soledad",
+        "term": "SOLEDAD",
+        "aliases": [
+            "kernel soledad",
+            "asistente soledad",
+            "pnlio soledad",
+            "soledad v7.1.1"
+        ],
+        "category": "local_ai_kernel",
+        "definition": (
+            "Implementación de un kernel de inteligencia artificial "
+            "local basado en recuperación aumentada por generación "
+            "y consulta de documentos."
+        ),
+        "version": "7.1.1",
+        "status": "study_and_testing"
+    },
+
+    {
+        "id": "rag",
+        "term": "RAG",
+        "aliases": [
+            "retrieval augmented generation",
+            "generacion aumentada por recuperacion",
+            "recuperacion aumentada por generacion",
+            "consulta documental"
+        ],
+        "category": "information_retrieval",
+        "definition": (
+            "Método que recupera información de documentos y la utiliza "
+            "como contexto para generar respuestas."
+        ),
+        "status": "established_technology"
+    },
+
+    {
+        "id": "ollama",
+        "term": "Ollama",
+        "aliases": [
+            "motor ollama",
+            "runtime local",
+            "motor de inferencia"
+        ],
+        "category": "inference_engine",
+        "definition": (
+            "Herramienta utilizada para ejecutar modelos de lenguaje "
+            "localmente."
+        ),
+        "status": "third_party_component"
+    },
+
+    {
+        "id": "phi3",
+        "term": "Phi-3",
+        "aliases": [
+            "phi3",
+            "phi 3",
+            "phi-3 mini",
+            "modelo phi3"
+        ],
+        "category": "language_model",
+        "definition": (
+            "Modelo de lenguaje de Microsoft utilizado por SOLEDAD "
+            "mediante Ollama."
+        ),
+        "model_identifier": "phi3:3.8b-mini-4k-instruct-q4_K_M",
+        "status": "documented_component"
+    },
+
+    {
+        "id": "chromadb",
+        "term": "ChromaDB",
+        "aliases": [
+            "chroma",
+            "chroma db",
+            "base vectorial",
+            "base de datos vectorial",
+            "memoria vectorial"
+        ],
+        "category": "vector_database",
+        "definition": (
+            "Base de datos vectorial con almacenamiento persistente "
+            "local para documentos y recuperación contextual."
+        ),
+        "status": "documented_component"
+    },
+
+    {
+        "id": "lattis",
+        "term": "LATTIS",
+        "aliases": [
+            "modulo lattis",
+            "extraccion web",
+            "lector web",
+            "captura de paginas web"
+        ],
+        "category": "web_extraction",
+        "definition": (
+            "Módulo documentado de extracción de contenido web "
+            "mediante requests y BeautifulSoup."
+        ),
+        "status": "documented_component"
+    },
+
+    {
+        "id": "pypdfloader",
+        "term": "PyPDFLoader",
+        "aliases": [
+            "lector pdf",
+            "ingesta pdf",
+            "cargador de documentos pdf"
+        ],
+        "category": "document_ingestion",
+        "definition": (
+            "Componente de LangChain utilizado para cargar y dividir "
+            "documentos PDF."
+        ),
+        "status": "documented_component"
+    },
+
+    {
+        "id": "watchdog",
+        "term": "Watchdog",
+        "aliases": [
+            "monitor de carpeta",
+            "vigilante de archivos",
+            "indexacion automatica"
+        ],
+        "category": "file_monitor",
+        "definition": (
+            "Biblioteca utilizada para detectar nuevos archivos "
+            "en directorios y activar procesos de ingesta."
+        ),
+        "status": "documented_component"
+    },
+
+    {
+        "id": "rcr",
+        "term": "RCR",
+        "aliases": [
+            "metrica rcr",
+            "coherencia contextual",
+            "rich cognitive response"
+        ],
+        "category": "experimental_metric",
+        "definition": (
+            "Métrica de coherencia contextual mencionada en la "
+            "documentación de SOLEDAD. Su capacidad predictiva y "
+            "validez cuantitativa requieren evaluación experimental."
+        ),
+        "status": "pending_validation"
+    },
+
+    {
+        "id": "offline",
+        "term": "IA local offline",
+        "aliases": [
+            "inteligencia artificial local",
+            "ia sin nube",
+            "ia sin api externa",
+            "ejecucion local",
+            "offline"
+        ],
+        "category": "execution_mode",
+        "definition": (
+            "Ejecución de inferencia en el computador del usuario "
+            "sin depender de servicios externos de IA. La instalación "
+            "inicial y la extracción web explícita pueden requerir internet."
+        ),
+        "status": "documented_with_conditions"
+    },
+
+    {
+        "id": "memory",
+        "term": "Memoria",
+        "aliases": [
+            "memoria persistente",
+            "memoria documental",
+            "almacenamiento de contexto"
+        ],
+        "category": "core_principle",
+        "definition": (
+            "Capacidad arquitectónica de conservar información "
+            "para su posterior recuperación y utilización contextual."
+        ),
+        "status": "core_principle"
+    },
+
+    {
+        "id": "continuity",
+        "term": "Continuidad",
+        "aliases": [
+            "continuidad contextual",
+            "continuidad informacional"
+        ],
+        "category": "core_principle",
+        "definition": (
+            "Principio de conservación de relaciones y antecedentes "
+            "entre interacciones o procesos."
+        ),
+        "status": "core_principle"
+    },
+
+    {
+        "id": "context",
+        "term": "Contexto",
+        "aliases": [
+            "contexto informacional",
+            "contexto documental",
+            "contexto de consulta"
+        ],
+        "category": "core_principle",
+        "definition": (
+            "Información relevante que acompaña una consulta y "
+            "permite interpretar y fundamentar una respuesta."
+        ),
+        "status": "core_principle"
+    }
+]
+
+
+# ==========================================================
+# 3. RELACIONES ENTRE CONCEPTOS
+# ==========================================================
+
+RELATIONS = [
+    {
+        "source": "PNLIO",
+        "relation": "contains_implementation",
+        "target": "SOLEDAD"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "uses",
+        "target": "RAG"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "uses",
+        "target": "Ollama"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "uses",
+        "target": "Phi-3"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "stores_information_in",
+        "target": "ChromaDB"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "extracts_web_content_with",
+        "target": "LATTIS"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "ingests_pdf_with",
+        "target": "PyPDFLoader"
+    },
+    {
+        "source": "SOLEDAD",
+        "relation": "monitors_files_with",
+        "target": "Watchdog"
+    },
+    {
+        "source": "PNLIO",
+        "relation": "based_on",
+        "target": "Memoria"
+    },
+    {
+        "source": "PNLIO",
+        "relation": "based_on",
+        "target": "Continuidad"
+    },
+    {
+        "source": "PNLIO",
+        "relation": "based_on",
+        "target": "Contexto"
+    }
+]
+
+
+# ==========================================================
+# 4. AFIRMACIONES Y LIMITACIONES
+# ==========================================================
+
+CLAIMS = [
+    {
+        "id": "claim_001",
+        "statement": "SOLEDAD utiliza Ollama y Phi-3.",
+        "status": "documented"
+    },
+    {
+        "id": "claim_002",
+        "statement": "SOLEDAD utiliza ChromaDB como almacenamiento vectorial.",
+        "status": "documented"
+    },
+    {
+        "id": "claim_003",
+        "statement": "SOLEDAD permite consultar documentos PDF indexados.",
+        "status": "documented"
+    },
+    {
+        "id": "claim_004",
+        "statement": "SOLEDAD puede extraer páginas web mediante LATTIS.",
+        "status": "documented_with_network_condition"
+    },
+    {
+        "id": "claim_005",
+        "statement": "El documento declara un requisito de 5 GB de RAM.",
+        "status": "documented_requirement_not_independently_benchmarked"
+    },
+    {
+        "id": "claim_006",
+        "statement": "La reducción de alucinaciones del 87 al 92 por ciento no está validada.",
+        "status": "unvalidated"
+    },
+    {
+        "id": "claim_007",
+        "statement": "SOLEDAD se encuentra en fase de estudio y pruebas.",
+        "status": "documented"
+    }
+]
+
+
+# ==========================================================
+# 5. CONFIGURACIÓN DE RECONOCIMIENTO
+# ==========================================================
+
+RECOGNITION = {
+    "language": "es",
+    "secondary_language": "en",
+    "normalization": [
+        "lowercase",
+        "unicode_normalization",
+        "accent_insensitive_matching",
+        "whitespace_normalization"
+    ],
+    "matching_strategy": [
+        "exact_term",
+        "alias_matching",
+        "concept_association",
+        "relationship_lookup"
+    ],
+    "important_rule": (
+        "No considerar equivalentes dos conceptos únicamente "
+        "porque comparten palabras. Utilizar sus identificadores "
+        "y relaciones documentadas."
+    )
+}
+
+
+# ==========================================================
+# 6. GENERACIÓN DEL CORPUS
+# ==========================================================
+
+def build_knowledge():
+
+    payload = {
+        "schema": "mononet_pnlio_knowledge",
+        "schema_version": VERSION,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "project": PROJECT,
+        "source": {
+            "document": "PNLIO v7.1.1 - SOLEDAD",
+            "document_version": "7.1.1",
+            "source_url": (
+                "https://github.com/godear6959-creator/"
+                "PNLIO-Framework/blob/851c299427eb36d1ecc062cac79346894fa9220b/"
+                "PNLIO_v7.1.1_SOLEDAD"
+            ),
+            "source_type": "technical_documentation",
+            "source_status": "user_provided_document"
+        },
+        "concepts": CONCEPTS,
+        "relations": RELATIONS,
+        "claims": CLAIMS,
+        "recognition": RECOGNITION
+    }
+
+    canonical = json.dumps(
+        payload,
+        ensure_ascii=False,
+        sort_keys=True
+    )
+
+    payload["integrity"] = {
+        "algorithm": "SHA256",
+        "hash": hashlib.sha256(
+            canonical.encode("utf-8")
+        ).hexdigest()
+    }
+
+    return payload
+
+
+def main():
+
+    knowledge = build_knowledge()
+
+    OUTPUT.write_text(
+        json.dumps(
+            knowledge,
+            ensure_ascii=False,
+            indent=4
+        ),
+        encoding="utf-8"
+    )
+
+    print("=" * 55)
+    print("MONONET - PNLIO KNOWLEDGE UPDATE")
+    print("=" * 55)
+    print("Estado: CORPUS GENERADO")
+    print("Proyecto:", PROJECT["id"])
+    print("Versión SOLEDAD: 7.1.1")
+    print("Conceptos:", len(CONCEPTS))
+    print("Relaciones:", len(RELATIONS))
+    print("Afirmaciones:", len(CLAIMS))
+    print("Archivo:", OUTPUT.resolve())
+    print("=" * 55)
+    print("Integridad SHA256:")
+    print(knowledge["integrity"]["hash"])
+    print("=" * 55)
+    print("Listo para integración con Mononet.")
+
+
+if __name__ == "__main__":
+    main()
